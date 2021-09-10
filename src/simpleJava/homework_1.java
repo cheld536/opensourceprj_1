@@ -146,6 +146,7 @@ public class homework_1 {
 		s.close();
 		*/
 		
+		/* 10번
 		System.out.println("첫 번째 원의 중심과 반지름 입력>>");
 		Scanner s = new Scanner(System.in);
 		int x = s.nextInt();
@@ -163,9 +164,40 @@ public class homework_1 {
 		else 
 			System.out.println(" 두 원은 서로 안겹친다.");
 		s.close();
+		*/
+		//12번
+		System.out.println(" 연산 >>");
+		Scanner s = new Scanner(System.in);
+		int op1 = s.nextInt();
+		String op = s.next();
+		int op2 = s.nextInt();
 		
-		
-		
+		int res = 0;
+		if(op.equals("+"))
+			res = op1 + op2;
+		else if(op.equals("-"))
+			res = op1 - op2;
+		else if(op.equals("*"))
+			res = op1*op2;
+		else if(op.equals("/"))
+		{
+			if(op2 == 0)
+			{
+				System.out.println("0으로 나눌 수 없다.");
+				s.close();
+				return;
+			}
+			else
+				res = op1/op2;
+			}
+		else 
+		{
+			System.out.println("사칙 연산이 아닙니다.");
+			s.close();
+			return;
+		}
+		System.out.println(op1 + op + op2 + "의 계산 결과는 "+ res);
+		s.close();
 		
 		
 	}
