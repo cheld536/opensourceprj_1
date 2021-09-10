@@ -7,6 +7,13 @@
 package simpleJava;
 import java.util.Scanner;
 public class homework_1 {
+	public static boolean inRect(int x, int y, int rectx1, int rectx2, int recty1, int recty2)
+	{
+		if((x>=rectx1 && x<=rectx2)&&(y>=recty1 && y<=recty2))
+			return true;
+		else
+			return false;
+	}
 
 	public static void main(String[] args) {
 		
@@ -92,7 +99,7 @@ public class homework_1 {
 		s.close();
 		*/
 		
-		
+		/*   6번
 		Scanner s=new Scanner(System.in); 
 		System.out.print("1~99 사이의 정수를 입력하시오>>");
 		
@@ -117,8 +124,45 @@ public class homework_1 {
 			System.out.println("숫자의 범위를 벗어났습니다.");
 		}
 		s.close();
+		*/
 		
+		/*8번
+		System.out.println("두 점 (x1,y1), (x2,y2)의 좌표를 입력하시오 >> ");
+		Scanner s=new Scanner(System.in);
 		
+		int x1 = s.nextInt();
+		int y1 = s.nextInt();
+		int x2 = s.nextInt();
+		int y2 = s.nextInt();
+		
+		if(inRect(x1,y2,100,100,200,200) || inRect(x2,y2,100,100,200,200) || inRect(x1,y2,100,100,200,200) || inRect(x2,y1,100,100,200,200))
+			System.out.println("사각형이 겹칩니다.");
+		else if((inRect(x1,y1,100,100,200,200)) && inRect(x2,y2,100,100,200,200) && inRect(x2,y1,100,100,200,200) && inRect(x1,y2,100,100,200,200))
+			System.out.println("사각형이 겹칩니다.");
+		else if ((inRect(100,100,x1,y1,x2,y2)) && inRect(100,200,x1,y1,x2,y2) && inRect(200,100,x1,y1,x2,y2) && inRect(200,200,x1,y1,x2,y2))
+			System.out.println("사각형이 겹칩니다.");
+		else 
+			System.out.println("사각형이 겹치지 않습니다.");
+		s.close();
+		*/
+		
+		System.out.println("첫 번째 원의 중심과 반지름 입력>>");
+		Scanner s = new Scanner(System.in);
+		int x = s.nextInt();
+		int x1 = s.nextInt();
+		double r = s.nextDouble();
+		
+		System.out.println("두 번째 원의 중심과 반지름 입력>>");
+		int y = s.nextInt();
+		int y1 =s.nextInt();
+		double r1 = s.nextDouble();
+		double distance = 0.0;
+		distance = Math.sqrt((x=x1)*(x-x1)+(y-y1)*(y-y1));
+		if (distance <= r+r1)
+			System.out.println(" 두 원은 서로 겹친다.");
+		else 
+			System.out.println(" 두 원은 서로 안겹친다.");
+		s.close();
 		
 		
 		
